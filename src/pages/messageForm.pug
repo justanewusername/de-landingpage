@@ -1,0 +1,14 @@
+form#js-send-msg-form( action="" method="post" novalidate style="display: none;")
+    h3 SEND US MESSAGE
+    div(class="form__item")
+        label(for="name") Full Name
+        input#name(type="text" name="name" data-js-input="username" placeholder="Your Name")
+    div(class="form__item")
+        label(for="email") Email
+        input#email(type="email" name="email" data-js-input="email" placeholder="Your Email")
+    div(class="form__item")
+        label(for="msg") Message
+        textarea#message(name="msg" data-js-input="text" placeholder="Your Message")
+    div(class="form__item")
+        p#js-error-text(class="error_text")  
+        button(type="submit" data-js-submit class="standard-btn") SUBMIT
