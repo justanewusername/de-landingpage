@@ -1,4 +1,5 @@
 import "../styles/popUp.pcss";
+import closeBtn from "../images/close_btn.svg";
 
 export default class PopUp {
     static popupSelector = "#popup";
@@ -26,6 +27,11 @@ export default class PopUp {
         popupContent.appendChild(contentElement);
         contentElement.style.display = "flex";
 
+        let popupCloseBtn = document.createElement("img");
+        popupCloseBtn.src = closeBtn;
+        popupCloseBtn.setAttribute("id", "js-popup-close-btn");
+        popupContent.appendChild(popupCloseBtn);
+
         let popup = document.createElement("div");
         popup.setAttribute("id", "popup");
         popup.appendChild(popupContent);
@@ -44,6 +50,12 @@ export default class PopUp {
             };
         }
 
+        // close button
+        this.popupElement.querySelector("#js-popup-close-btn").onclick = () => {
+            this.hide();
+        };
+
+        // close on background clicked
         this.popupElement.onclick = (event) => {
             if (event.target !== event.currentTarget) return;
             this.hide();
