@@ -1,7 +1,7 @@
 export default class FormValidation {
     static emailRegex =
         /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    static nameRegex = /^[a-zA-Z ]{2,30}$/;
+    static nameRegex = /^[a-zA-Zа-яА-Я ]{2,30}$/;
 
     static setInputErrorState(input, isValid = true) {
         input.classList.toggle("error_input", !isValid);
